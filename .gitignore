@@ -1,0 +1,87 @@
+# 暫存檔
+.env
+gohub
+.DS_Store
+.history
+
+# Golang
+######################
+
+# 由 go test -c 生成的二進位檔案
+*.test
+
+go 覆蓋率工具
+*.out
+*.prof
+*.cgo1.go
+.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.
+
+# 編譯檔案
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.exe~
+*.o
+*.so
+dist/**
+
+# 壓縮包
+############
+
+# Git 自帶壓縮，如果這些壓縮包裡有程式碼，建議解壓後 commit
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# 日誌檔案和資料庫
+######################
+*.log
+*.sqlite
+*.db
+
+# 臨時檔案
+######################
+tmp/
+.tmp/
+
+# 系統生成檔案
+######################
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.TemporaryItems
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# IDE 和編輯器
+######################
+.idea/
+/go_build_*
+out/
+.vscode/
+.vscode/settings.json
+.sublime
+__debug_bin
+.project
+
+# 前端工具鍊
+######################
+.sass-cache/*
+node_modules/

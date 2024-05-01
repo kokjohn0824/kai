@@ -1,0 +1,16 @@
+DIST_DIR=./dist
+MAIN_PATH=./cmd/main.go
+BINARY_NAME=main
+
+build:
+	go build -o ${DIST_DIR}/${BINARY_NAME} ${MAIN_PATH}
+
+run: 
+	go build -o ${DIST_DIR}/${BINARY_NAME} ${MAIN_PATH}
+	${DIST_DIR}/${BINARY_NAME}
+
+clean:
+	go clean 
+	rm ${DIST_DIR}/*
+
+	
