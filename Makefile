@@ -1,22 +1,25 @@
+.PHONY: clean help
+
 DIST_DIR=./dist
 DEPLOY_DIR=~/bin
-BINARY_NAME=gun
+BINARY_NAME=kai
 MAIN_PATH=./cmd/*.go
 
 default: help
 
 build: clean
-	@go build -o ${DIST_DIR}/${BINARY_NAME} ${MAIN_PATH}
+	@go build -o ${DIST_DIR}/${BINARY_NAME} ${MAIN_PATH} && echo build complete
 
 run: build 
-	${DIST_DIR}/${BINARY_NAME}
+	@${DIST_DIR}/${BINARY_NAME}
 
 clean:
 	@go clean 
 	@rm -rf ./${DIST_DIR}/**
+	@echo cleaned up dist
 
 deploy:
-	go build -o ${DEPLOY_DIR}/${BINARY_NAME} ${MAIN_PATH}
+	@go build -ldflags="-s -w" -o ${DEPLOY_DIR}/${BINARY_NAME} ${MAIN_PATH} && echo deploy complete
 	
 help:
 	@echo "Available targets:"

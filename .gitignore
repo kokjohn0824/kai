@@ -10,7 +10,7 @@ gohub
 # 由 go test -c 生成的二進位檔案
 *.test
 
-go 覆蓋率工具
+#go 覆蓋率工具
 *.out
 *.prof
 *.cgo1.go
