@@ -1,4 +1,4 @@
-.PHONY: clean help
+.PHONY: default build run clean deploy help
 
 DIST_DIR=./dist
 DEPLOY_DIR=~/bin
