@@ -12,15 +12,14 @@ Installation
 To install Kai, clone the repository and build the application:
 
 ```bash
-git clone https://github.com/yourusername/kai-cli.git
-cd kai-cli
+git clone https://github.com/kokjohn0824/kai.git
+cd kai
 make build
 ```
 
 You can also deploy the application to your local ~/bin directory:
 
 ```bash
-Copy code
 make deploy
 ```
 
@@ -29,7 +28,6 @@ make deploy
 To create a new Go project, use the kai command followed by the project name:
 
 ```bash
-Copy code
 ./dist/kai my-new-project
 ```
 
