@@ -2,18 +2,16 @@ DIST_DIR=./dist
 MAIN_PATH=./cmd/*.go
 BINARY_NAME=main
 
-.PHONY build
+.PHONY: clean build
 build:
-	go build -o ${DIST_DIR}/${BINARY_NAME} ${MAIN_PATH}
+	@go build -o ${DIST_DIR}/${BINARY_NAME} ${MAIN_PATH} &&  echo ${BINARY_NAME} build success
 
-.PHONY run
+.PHONY: run
 run: 
-	go build -o ${DIST_DIR}/${BINARY_NAME} ${MAIN_PATH}
-	${DIST_DIR}/${BINARY_NAME}
+	go run ${MAIN_PATH}
 
-.PHONY clean
+.PHONY: clean
 clean:
-	go clean 
-	rm ${DIST_DIR}/*
+	@go clean && rm ${DIST_DIR}/* && echo ${DIST_DIR} cleaned
 
 	
