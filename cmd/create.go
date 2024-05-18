@@ -18,27 +18,24 @@ func createProject(projectName string) error {
 	rootdir := "templates"
 	cwd, err := os.Getwd()
 	if err != nil {
-		return fmt.Errorf("error while getting user directory: %v ", err)
+		return fmt.Errorf("error while getting user directory: %w ", err)
 	}
 	ctx := Context{ProjectName: projectName}
 	projectDir := path.Join(cwd, ctx.ProjectName)
 
 	err = os.MkdirAll(projectDir, 0777)
 	if err != nil {
-		fmt.Println("error while creating project folder: ", err)
-		return err
+		return fmt.Errorf("error while creating project folder: %w ", err)
 	}
 
 	err = os.Chmod(projectDir, 0777)
 	if err != nil {
-		fmt.Println("error while chmod project folder: ", err)
-		return err
+		return fmt.Errorf("error while chmod project folder: %w ", err)
 	}
 
 	walkerr := fs.WalkDir(embedDir, rootdir, func(p string, d fs.DirEntry, err error) error {
 		if err != nil {
-			fmt.Println("error while walking internal tree: ", err)
-			return err
+			return fmt.Errorf("error while walking internal tree: %w ", err)
 		}
 		trimmed := strings.TrimPrefix(p, rootdir)
 
