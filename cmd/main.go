@@ -12,8 +12,7 @@ type Context struct {
 const (
 	verbose = `project created, you can now run the following commands:
 go to your created directory 
-cd  
-`
+cd `
 )
 
 func main() {
